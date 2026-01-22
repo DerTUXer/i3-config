@@ -1,0 +1,374 @@
+############################################################################
+#  Hier entsteht ein Skript zur optimalen
+#  Konfiguration von i3.
+#
+#  Folgendes muss installiert sein
+#  1. Xubuntu (neuste Version)
+#  2. Debian-Z (https://github.com/zedsalim/debian-z)
+#  3. bash-tuxer-adonn (https://github.com/DerTUXer/bash-tuxer-addon)
+#  4. Programme von bash-tuxer-adonn installieren
+#  5. sudo apt install plank
+# ########################################################################### 
+
+########################################################
+ ##          TUXer's .config ($HOME/i3/config)      ##
+   ##          Dateiinhalt ersetzten              ## 
+     #############################################
+
+######################################
+#            External
+######################################
+include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/colors.conf
+exec --no-startup-id ibus-daemon -drx
+exec_always feh --bg-fill ~/.config/wallpapers/Tuxer.jpg
+exec_always --no-startup-id ~/.config/i3/autostart.sh
+exec --no-startup-id ~/.config/scripts/help_notification.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+######################################
+#              Vars
+######################################
+set $mod Mod4
+set $alt Mod1 
+set $g_inner 9
+set $g_outer 4
+smart_borders on
+
+######################################
+#             Theme
+######################################
+font pango:monospace 10
+new_window 1pixel
+gaps inner $g_inner
+gaps outer $g_outer
+default_border pixel 2
+default_floating_border pixel 2
+floating_modifier $mod
+
+######################################
+#           	Gaps
+######################################
+bindsym $mod+Shift+n 	gaps inner current set $g_inner; gaps outer current set $g_outer
+bindsym $mod+x		gaps outer current plus 5
+bindsym $mod+Shift+x	gaps outer current minus 5 
+bindsym $mod+z		gaps inner current plus 5
+bindsym $mod+Shift+z	gaps inner current minus 5
+
+######################################
+#    	 System keybindings
+######################################
+bindsym $mod+q kill
+bindsym $mod+Shift+b exec "sudo reboot"
+bindsym $mod+Shift+s exec "sudo shutdown now"
+bindsym $mod+Shift+q exec "pkill -u tuxer-xu"
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $alt+Shift+s layout stacking
+bindsym $alt+Shift+t layout tabbed
+bindsym $alt+Shift+e layout toggle split
+bindsym $mod+w exec google-chrome-stable
+
+# Open Alacritty in floating mode
+bindsym $mod+Shift+Return exec gnome-terminal --class AlacrittyFloating
+bindsym $mod+Return exec gnome-terminal --class AlacrittyFloating
+
+# Set AlacrittyFloating window to floating mode
+for_window [class="AlacrittyFloating"] floating enable, move position center
+
+# Open sxiv in fullscreen mode
+for_window [class="Sxiv"] fullscreen
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="gnome-disks"] floating enable border pixel 1
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="Todo"] floating enable sticky enable border normal
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+############################################
+#         TUXer's keybindings 
+############################################
+ bindsym $mod+a exec audacious
+ bindsym $mod+b exec alacarte
+ bindsym $mod+c exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=x64sc net.sf.VICE
+ bindsym $mod+d exec gnome-disks
+ bindsym $mod+e exec easytag
+#bindsym $mod+f fullscreen
+ bindsym $mod+g exec gnome-terminal -e "sudo gparted" &
+#bindsym $mod+h splitt h
+ bindsym $mod+i exec gnome-terminal -e "htop"
+ bindsym $mod+j exec i3-sensible-terminal -e btop
+ bindsym $mod+k exec kdenlive 
+ bindsym $mod+l exec libreoffice
+ bindsym $mod+m exec 
+ bindsym $mod+n exec nemo
+ bindsym $mod+o exec
+#bindsym $mod+p rofi
+#bindsym $mod+q kill
+#bindsym $mod+r ranger
+ bindsym $mod+s exec
+ bindsym $mod+t exec
+ bindsym $mod+u exec
+#bindsym $mod+v splitt v
+#bindsym $mod+w Browser
+#bindsym $mod+x Fenstergröße
+#bindsym $mod+z Fenstergröße
+
+############################################
+#         TUXer's autostart (EXTRA-DATEI)
+############################################
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+picom -b &
+dunst &
+
+killall nm-applet
+nm-applet &
+#killall blueman-applet
+#blueman-applet &
+
+killall volumeicon
+volumeicon &
+numlockx on &
+
+killall xfce4-power-manager 
+xfce4-power-manager &
+killall sxhkd
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
+ibus-daemon -drx &
+
+# Element (Matrix-Chat-App) starten
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/element --file-forwarding im.riot.Riot @@u %U @@ --hidden &
+
+# starten für musik
+systemctl --user start mpd
+
+## Zusätzliches Dock
+plank
+
+## Ruhezustand komplett deaktivieren
+sudo systemctl mask suspend.target hibernate.target sleep.target hybrid-sleep.target 
+
+## Automatischer Ruhezustand bei Inaktivität (AC/Netzbetrieb) in Sekunden
+# gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+
+## Bildschirm ausschalten (Sekunden) (300 für 5 Minuten; 0 zum Deaktivieren)
+gsettings set org.gnome.desktop.session idle-delay 0 
+
+##################################################
+#         TUXer's mpd.config (EXTRA-DATEI)
+##################################################
+music_directory    "/home/tuxer-xu/Musik"
+playlist_directory "/home/tuxer-xu/.config/mpd/playlists"
+db_file            "/home/tuxer-xu/.config/mpd/database"
+log_file           "/home/tuxer-xu/.config/mpd/log"
+pid_file           "/home/tuxer-xu/.config/mpd/pid"
+state_file         "/home/tuxer-xu/.config/mpd/state"
+
+audio_output {
+    type    "pulse"
+    name    "PulseAudio"
+}
+
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+    format                  "44100:16:2"
+}
+
+
+##################################################
+#         TUXer's ncmpcpp .config (EXTRA-DATEI)
+##################################################
+audio_output {
+    type  "fifo"
+    name  "my_fifo"
+    path  "/tmp/mpd.fifo"
+    format "44100:16:2"
+}
+
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_spectrum_smooth_look = yes
+  visualizer_type = "spectrum" 
+  visualizer_type = "wave"
+  visualizer_type = "wave_filled"
+  visualizer_type = "ellipse"
+# visualizer_type = "spectrum" # oder 'wave', 'wave_filled', 'ellipse'
+visualizer_look = "+|" # Muss genau 2 Zeichen lang sein
+
+mpd_host = "/home/tuxer-xu/.config/mpd/socket"
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+#mpd_music_dir = "/home/tuxer-xu/Musik"
+mpd_music_directory = "/home/tuxer-xu/Musik"
+
+##################################################
+#         TUXer's sxhkdrc (EXTRA-DATEI)
+##################################################
+# super + shift + h
+  zathura "$HOME/.config/guide.pdf"
+
+alt + x
+	lgnome-terminal -e "ranger" ~/Downloads/Watch
+
+alt + c
+	gnome-terminal -e ~/.config/scripts/conf.sh
+
+alt + t
+	source ~/.config/scripts/themes.sh
+
+alt + s
+	feh -F "$HOME/Pictures/schedule.png"
+
+alt + b 
+	source ~/.config/scripts/bookmarks.sh
+
+alt + l
+	/mnt/FILES/Files/My_Stuff/mytodo/todo
+
+alt + y 
+	source ~/.config/scripts/mpv-youtube.sh
+
+alt + shift + y
+	sudo /home/zed/.config/scripts/yt_blocker.sh
+
+alt + z 
+	source ~/.config/scripts/bookmark_pdf.sh
+
+alt + p 
+  pavucontrol
+
+# BG Selector
+
+# F1
+	# source ~/.config/scripts/wallpaper-single-display.sh
+
+# F2
+	# source ~/.config/scripts/wallpaper-double-display.sh
+
+# Programs
+
+super + Return
+	gnome-terminal
+
+super + p
+   	rofi -show drun -line padding 4 -hide-scrollbar -show-icons
+   	
+#super + d
+#	discord
+
+super + r
+   	gnome-terminal -e "ranger"
+
+super + n
+	nemo
+
+#super + g
+#	github-desktop
+
+#super + w
+ #  	brave-browser
+
+#super + c 
+#	codium
+
+#super + t
+#  	telegram-desktop
+
+Print
+   	flameshot gui
+
+alt + w
+ 	rofi -show
+
+# Audio Keybindings
+
+XF86AudioMute
+	amixer set Master toggle
+
+XF86AudioLowerVolume
+	amixer set Master 2%-
+
+XF86AudioRaiseVolume
+	amixer set Master 2%+
+
+# Brightness bindings
+
+XF86MonBrightnessDown
+    ~/.config/scripts/brightness-control.sh XF86MonBrightnessDown
+
+XF86MonBrightnessUp
+    ~/.config/scripts/brightness-control.sh XF86MonBrightnessUp
+
+# Switch between keyboard languages
+
+alt + space
+    source ~/.config/scripts/keyboard_layout.sh
+
+#i3 Specific Keybindings
+
+super + q
+    i3-msg kill
+
+super + shift + q
+     	i3-msg exit
+
+super + shift + c
+    i3-msg reload; notify-send 'i3-gaps' 'Reloaded'
+
+super + shift + r
+    i3-msg restart; notify-send 'i3-gaps' 'Restarted'
+
+super + Escape
+   	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+
+super + {v,h}
+    i3-msg split {v,h}
+
+super + f
+    i3-msg fullscreen toggle
+
+super + shift + f
+    i3-msg floating toggle
+
+super + control + space
+    i3-msg focus mode_toggle
+
+super + alt + a
+    i3-msg focus parent
+
+# Workspaces
+
+super + {1-9,0}
+    i3-msg workspace {1-9,10}
+
+super + shift+{1-9,0}
+    i3-msg move container to workspace number {1-9,10}
+    
+# Movement
+
+super+{h,j,k,l}
+    i3-msg focus {left,down,up,right}
+
+super+shift+{h,j,k,l}
+    i3-msg move {left,down,up,right}
+    
+super+{Left,Down,Up,Right}
+    i3-msg focus {left,down,up,right}
+    
+super+shift+{Left,Down,Up,Right}
+    i3-msg move {left,down,up,right}
+
+super + ctrl + {Left,Down,Up,Right}
+    i3-msg resize {grow width 1 px or 1 ppt, shrink height 1 px or 1 ppt, grow height 1 px or 1 ppt, shrink width 1 px or 1 ppt}
+
