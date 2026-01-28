@@ -3,6 +3,8 @@
 Ist ein Fork vom Projekt Debian-Z (https://github.com/zedsalim/debian-z). Hier entsteht eine
 
 vorkonfiguriete i3 tiling Installationshilfe, welche auf Bash-Skripte aufbaut.
+\
+\
 
 
 
