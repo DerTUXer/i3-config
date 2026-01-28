@@ -7,7 +7,7 @@ vorkonfiguriete i3 tiling Installationshilfe, welche
 auf Bash-Skripte aufbaut.
 
 
-WICHTIG! 
+__WICHTIG!__
 
 Es muss eine zuvor Ubuntu Desktop Umgebung installiert wwerden.
 
@@ -16,10 +16,10 @@ Ich empfehle Lubuntu, Xubuntu funktioniert aber auch.
 Die heruntergeladene Archiv-Datei entpacken und 
 
 
-WICHTIG! 
+__WICHTIG!__
 
-uns home-Verzeichnis entpacken.
+ins home-Verzeichnis entpacken.
 
-Danach einfach die run_me.sh audführen und das wars:
+Danach einfach die run_me.sh ausführen und das wars:
 
 Befehl: sh run_me.sh
