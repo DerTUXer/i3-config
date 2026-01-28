@@ -4,7 +4,7 @@ vorkonfiguriete i3 tiling Installationshilfe, welche
 auf Bash-Skripte aufbaut.
 
 WICHTIG!
-Es muss eine zuvor Ubuntu Desktop Umgebung installiet wwerden.
+Es muss eine zuvor Ubuntu Desktop Umgebung installiert wwerden.
 Ich empfehle Lubuntu, Xubuntu funktioniert aber auch. 
 
 Die heruntergeladene Archiv-Datei entpacken und
