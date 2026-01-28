@@ -1,0 +1,146 @@
+######################################
+#            External & Var          #
+######################################
+include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/colors.conf
+exec --no-startup-id ibus-daemon -drx
+exec_always feh --bg-fill ~/.config/wallpapers/horizon_text.jpg
+exec_always --no-startup-id ~/.config/i3/autostart.sh
+exec --no-startup-id ~/.config/scripts/help_notification.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+set $mod Mod4
+set $alt Mod1 
+set $g_inner 9
+set $g_outer 4
+smart_borders on
+
+# Set AlacrittyFloating window to floating mode
+  for_window [class="AlacrittyFloating"] floating enable, move position center
+# Open sxiv in fullscreen mode
+  for_window [class="Sxiv"] fullscreen
+
+# Open specific applications in floating mode
+  for_window [title="alsamixer"] floating enable border pixel 1
+  for_window [class="gnome-disks"] floating enable border pixel 1
+  for_window [class="Galculator"] floating enable border pixel 1
+  for_window [class="GParted"] floating enable border normal
+  for_window [class="Lxappearance"] floating enable sticky enable border normal
+  for_window [class="Pavucontrol"] floating enable
+  for_window [class="qt5ct"] floating enable sticky enable border normal
+  for_window [class="Simple-scan"] floating enable border normal
+  for_window [class="Todo"] floating enable sticky enable border normal
+
+# switch to workspace with urgent window automatically
+  for_window [urgent=latest] focus
+
+######################################
+#             Theme                  #
+######################################
+font pango:monospace 12
+new_window 1pixel
+gaps inner $g_inner
+gaps outer $g_outer
+default_border pixel 2
+default_floating_border pixel 2
+floating_modifier $mod
+
+
+################################################################
+##               MOD Keyindings  by TUXer's                   ##
+################################################################
+ bindsym $mod+Return exec alacritty
+ bindsym $mod+a exec audacious
+ bindsym $mod+b exec alacarte
+ bindsym $mod+c exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=x64sc net.sf.VICE
+ bindsym $mod+d exec gnome-disks
+ bindsym $mod+e exec evolution
+#bindsym $mod+f fullscreen
+ bindsym $mod+g exec --no-startup-id pkexec gparted
+#bindsym $mod+h splitt h
+ bindsym $mod+i exec alacritty -e "htop"
+ bindsym $mod+j exec i3-sensible-terminal -e btop
+ bindsym $mod+k exec kdenlive 
+ bindsym $mod+l exec libreoffice
+ bindsym $mod+m exec mtpaint
+ bindsym $mod+n exec nemo
+ bindsym $mod+o exec obs
+ bindsym $mod+p exec rofi -show drun -line padding 4 -hide-scrollbar -show-icons
+ bindsym $mod+q kill
+ bindsym $mod+r exec alacritty -e "ranger"
+ bindsym $mod+s exec i3-sensible-terminal -e "sudo synaptic" &
+ bindsym $mod+t exec alacritty --hold -e neowofetch
+ bindsym $mod+u exec gimp
+#bindsym $mod+v split v
+ bindsym $mod+w exec google-chrome-stable
+#bindsym $mod+x	
+ bindsym $mod+y exec remmina
+#bindsym $mod+z	
+
+#################################################################
+##            MOD + SHIFT   Keybinding   by Der TUXer          ##
+#################################################################
+  bindsym $mod+Shift+Return exec alacritty --class AlacrittyFloating
+# bindsym $mod+Shift+a 
+# bindsym $mod+Shift+b 
+# bindsym $mod+Shift+c  
+# bindsym $mod+Shift+d  
+# bindsym $mod+Shift+e
+# bindsym $mod+Shift+f 
+# bindsym $mod+Shift+g  
+# bindsym $mod+Shift+h 
+# bindsym $mod+Shift+i  
+# bindsym $mod+Shift+j  
+# bindsym $mod+Shift+k  
+# bindsym $mod+Shift+l   
+# bindsym $mod+Shift+m  
+  bindsym $mod+Shift+n pkexec systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+  bindsym $mod+Shift+o exec i3lock-fancy
+# bindsym $mod+Shift+o exec i3lock -i ~/.config/wallpapers/cinnamon_background_Tux.png
+  bindsym $mod+Shift+q exec pkill -u tuxer
+# bindsym $mod+Shift+r #refresh
+# bindsym $mod+Shift+s
+# bindsym $mod+Shift+t
+# bindsym $mod+Shift+u  
+# bindsym $mod+Shift+v 
+# bindsym $mod+Shift+w 
+# bindsym $mod+Shift+x
+# bindsym $mod+Shift+z 
+
+###############################################################
+##               alt Keybinding   by Der TUXer               ##
+###############################################################
+# bindsym $alt+a 
+  bindsym $alt+b exec ~/.config/scripts/bookmarks.sh
+  bindsym $alt+c exec ~/.config/scripts/conf.sh
+# bindsym $alt+d 
+  bindsym $alt+Shift+e layout toggle split  
+  bindsym $alt+e exec pluma
+# bindsym $alt+f
+# bindsym $alt+g 
+# bindsym $alt+h 
+# bindsym $alt+i 
+# bindsym $alt+j 
+# bindsym $alt+k 
+# bindsym $alt+l 
+# bindsym $alt+m 
+# bindsym $alt+n 
+# bindsym $alt+o 
+  bindsym $alt+p exec pavucontrol
+# bindsym $alt+q 
+# bindsym $alt+r 
+# bindsym $alt+s 
+  bindsym $alt+Shift+s layout stacking
+  bindsym $alt+t exec ~/.config/scripts/themes.sh
+  bindsym $alt+Shift+t layout tabbed
+# bindsym $alt+t        # Siehe sxhkd  themes.sh
+# bindsym $alt+u 
+# bindsym $alt+v 
+  bindsym $alt+w exec rofi -show
+# bindsym $alt+x 
+  bindsym $alt+y exec ~/.config/scripts/mpv-youtube.sh
+  bindsym $alt+Shift+y pkexec /home/zed/.config/scripts/yt_blocker.sh
+# bindsym $alt+z 
+# bindsym $alt+b 
+
+
