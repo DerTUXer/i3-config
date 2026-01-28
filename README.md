@@ -4,19 +4,19 @@ Ist ein Fork vom Projekt Debian-Z. Hier entsteht eine
 
 vorkonfiguriete i3 tiling Installationshilfe, welche
 
-auf Bash-Skripte aufbaut.
+auf Bash-Skripte aufbaut.\
 
 
-WICHTIG!
+WICHTIG!\
 
 Es muss eine zuvor Ubuntu Desktop Umgebung installiert wwerden.
 
 Ich empfehle Lubuntu, Xubuntu funktioniert aber auch. 
 
-Die heruntergeladene Archiv-Datei entpacken und
+Die heruntergeladene Archiv-Datei entpacken und\
 
 
-WICHTIG!
+WICHTIG!\
 
 uns home-Verzeichnis entpacken.
 
