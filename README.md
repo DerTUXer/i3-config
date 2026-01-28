@@ -24,6 +24,8 @@ Danach einfach die run_me.sh ausführen und das wars:
 
 Befehl: sh run_me.sh
 
+Alle anderen Skripte werden automatisch ausgelöst.
+
 
 <img width="1920" height="1080" alt="i3-screenshot" src="https://github.com/user-attachments/assets/defc0e35-8033-4c21-94b2-5fe0a472be4f" />
 
