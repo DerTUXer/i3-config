@@ -4,7 +4,7 @@
 cd
 mkdir ~/.themes
 mkdir ~/.icons
-cd debian-z/theme
+cd ~/dertuxer-z/theme
 tar -xf BlueSky-Clean-Dark.tar.xz
 tar xf Sunity-cursors.tar.gz
 tar xf Adwaita-dark.tar
@@ -30,7 +30,7 @@ cp -r Dracula-icons/ ~/.icons/
 cp -r Sunity-cursors/ ~/.icons/
 
 cd
-cd debian-z/
+cd ~/dertuxer-z/
 cp -r config/wallpapers/ ~/.config
 cp -r config/i3/ ~/.config
 cp -r config/sxhkd/ ~/.config
@@ -58,7 +58,7 @@ if [[ ! -d ~/.config/gtk-3.0 ]]; then
     sudo mkdir -p ~/.config/gtk-3.0
 fi
 
-cd debian-z/
+cd ~/dertuxer-z/
 sudo cp config/settings.ini ~/.config/gtk-3.0/
 cp config/.gtkrc-2.0 ~/
 #--------------------------------------------------
@@ -80,7 +80,7 @@ XF86AudioMute' >> ~/.xbindkeysrc
 xbindkeys -f ~/.xbindkeysrc
 #--------------------------------------------------
 cd
-cd debian-z/
+cd ~/dertuxer-z/
 source optional/keyboard_layout.sh
 source optional/terminal_in_pcmanfm.sh
 #source optional/nvidia.sh
@@ -88,4 +88,5 @@ source optional/nvim.sh
 source optional/default_apps.sh
 
 # TUXers Bash Config Datei
-cp .bashrc ~/
+cd
+cp ~/dertuxer-z/.bashrc ~/
