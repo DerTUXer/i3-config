@@ -3,9 +3,8 @@
 Ist ein Fork vom Projekt Debian-Z (https://github.com/zedsalim/debian-z). Hier entsteht eine
 
 vorkonfiguriete i3 tiling Installationshilfe, welche auf Bash-Skripte aufbaut.
-\
-\
 
+.
 
 
 
@@ -17,7 +16,7 @@ Ich empfehle Lubuntu, Xubuntu funktioniert aber auch.
 
 Die heruntergeladene Archiv-Datei entpacken und 
 
-
+.
 
 
 __WICHTIG!__
