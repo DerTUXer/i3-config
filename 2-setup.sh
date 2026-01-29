@@ -28,7 +28,10 @@ cd
 cd Downloads
 git clone --recurse-submodules https://github.com/fairyglade/ly
 cd ly/
-make
+git checkout v1.0.2
+zig build
+zig build
+#make
 sudo make install installsystemd
 sudo systemctl enable ly.service
 
