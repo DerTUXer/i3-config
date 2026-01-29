@@ -56,7 +56,8 @@ floating_modifier $mod
  bindsym $mod+d exec gnome-disks
  bindsym $mod+e exec evolution
 #bindsym $mod+f fullscreen
- bindsym $mod+g exec --no-startup-id pkexec gparted
+ bindsym $mod+g exec i3-sensible-terminal -e pkexec gparted & exit
+#Steambindsym $mod+g gparted
 #bindsym $mod+h splitt h
  bindsym $mod+i exec alacritty -e "htop"
  bindsym $mod+j exec i3-sensible-terminal -e btop
@@ -73,9 +74,9 @@ floating_modifier $mod
  bindsym $mod+u exec gimp
 #bindsym $mod+v split v
  bindsym $mod+w exec google-chrome-stable
-#bindsym $mod+x	
+ bindsym $mod+x	exec rhythmbox
  bindsym $mod+y exec remmina
-#bindsym $mod+z	
+ bindsym $mod+z	exec qmapshack
 
 #################################################################
 ##            MOD + SHIFT   Keybinding   by Der TUXer          ##
