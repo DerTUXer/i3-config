@@ -311,12 +311,11 @@ export EDITOR=nano
 alias musik='systemctl --user start mpd && ncmpcpp'
 alias pi-update='sudo sh $HOME/Dokumente/Ablage/raspi-update-host.sh'
 
-# REM Letzte Änderung alacritty migrate.
-
+# REM coming soon:
 # REM Puffer für PipeWire erhöhen, um Aussetzer bei der Audio-Aufnahme zu vermeiden
-# pw-metadata -n setting 0 clock.force-quantum 1024
+# REM pw-metadata -n setting 0 clock.force-quantum 1024
 # REM Testen Puffer Pipewire
-# echo "0" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+# REM echo "0" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 # REM dauerhaft
-# echo "option snd_hda_intel power_save=0 | sudo tee /etc/modprobe.d/audio_disable_powersave.conf
-### pw-top
+# REM echo "option snd_hda_intel power_save=0 | sudo tee /etc/modprobe.d/audio_disable_powersave.conf
+# REM pw-top
