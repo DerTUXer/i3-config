@@ -68,6 +68,7 @@ sudo nala install -y viewnior feh sxiv ueberzug python3-pillow
 
 # Media Player
 sudo nala install -y mpv mpc ncmpcpp mpd vlc audacious audacity
+sudo nala install -y guvcview
 
 # Document Viewer
 sudo nala install -y zathura qiv
