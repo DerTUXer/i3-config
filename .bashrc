@@ -277,7 +277,7 @@ alias soft2='clear &&
 	echo "es werden folgende Softwarepakete zusätzlich installiert:"
 	echo -e "\033[1;34m...kdenlive" && 
 	echo ...qmapshack, gpsprune, viking  && 
-	echo ...remmina&& 
+	echo ...remmina guvcview && 
 	echo ...obs-studio && 
 	echo ...audacious, audacity && 
 	echo ...nextcloud-desktop && 
@@ -292,7 +292,7 @@ alias soft2='clear &&
 	echo ...alacritty && 
 	echo -e " \e[1m\e[34m \e[0m " && 
 	sudo apt install -y kdenlive qmapshack viking obs-studio audacious audacity &&
-	sudo apt install -y gpsprune &&
+	sudo apt install -y gpsprune guvcview &&
 	sudo apt install -y remmina nextcloud-desktop &&
 	sudo apt install -y gimp mtpaint pdfarranger xournal &&
 	sudo apt install -y jstest-gtk steam-installer wine winetricks &&
