@@ -38,7 +38,7 @@ cp -r config/scripts/ ~/.config
 cp -r config/alacritty/ ~/.config
 cp -r config/dunst/ ~/.config
 cp -r config/rofi/ ~/.config
-# cp -r config/neofetch/ ~/.config
+# cp -r config/neowofetch/ ~/.config
 cp -r config/ranger/ ~/.config
 cp -r config/polybar/ ~/.config
 cp -r config/zathura/ ~/.config
@@ -89,4 +89,8 @@ source optional/default_apps.sh
 
 # TUXers Bash Config Datei
 cd
-cp ~/dertuxer-z/.bashrc ~/
+cd ~/dertuxer-z/
+cp .bashrc ~/
+
+
+
