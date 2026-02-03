@@ -103,7 +103,7 @@ sudo nala install -y remmina nextcloud-desktop
 sudo nala install -y gimp mtpaint pdfarranger xournal
 sudo nala install -y jstest-gtk steam-installer wine winetricks
 sudo nala install -y virtualbox virtualbox-guest-additions-iso
-sudo nala install -y pavucontrol 
+sudo nala install -y pavucontrol figlet
 sudo nala install -y flatpak inxi libcanberra-gtk3-module ssh  
 sudo nala install -y sysvbanneqiv lfm mc locate ncalsudo-rs flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
