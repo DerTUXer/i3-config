@@ -20,10 +20,10 @@ meson --prefix /usr/local
 ninja
 sudo ninja install
 
-# Installing dependencies for Ly Console Manager
+# Installation von 'Ly' als Terminal-Login
+# Zur Zeit ist Ly buggy, nach Lösungen wird gesucht
 sudo nala install -y libpam0g-dev libxcb-xkb-dev
 
-# Installing Ly Console Display Manager
 cd
 cd Downloads
 git clone --recurse-submodules https://github.com/fairyglade/ly
