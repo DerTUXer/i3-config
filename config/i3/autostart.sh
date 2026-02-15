@@ -1,8 +1,18 @@
-### Autostart-Datei
-### Hier können Prozesse hinterlegt werden, welche nach dem Login
-### direkt gestartet werden sollen
+#################################
+## Autostart-Datei
+#################################
+# Hier können Prozesse hinterlegt werden, welche nach dem Login
+# direkt gestartet werden sollen
+
+#################################
+# Hintergrundprogramm 
+# für grafische Passwort-Abfragen
+#################################
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
+######################
+## Polybar einrichten
+######################
 picom -b &
 dunst &
 killall nm-applet
@@ -22,13 +32,22 @@ sxhkd -c ~/.config/sxhkd/sxhkdrc &
 
 ibus-daemon -drx &
 
-# Element startenkillall tuxedo-control-center
+#################################################
+# Element (Matrix) im Hintergrund starten
+#################################################
 /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/element --file-forwarding im.riot.Riot @@u %U @@ --hidden &
 
-# Tuxedo-CC im Hintergrund starten
+#################################################
+# Nur für Tuxedo Computers
+# Tuxedo-Control-Center im Hintergrund starten
+#################################################
 # killall tuxedo-control-center --> Befehl überarbeiten
 # exec tuxedo-control-center --tray
 
+#############################################################
+# Wird fürs Abspielen von Audio-Dateiem im Terminal benötigt
+# mpd in Verbindung mit ncmpcpp
+############################################################
 # Wird für den Terminal Audio Player benötigt
 systemctl --user daemon-reload
 systemctl --user start mpd
