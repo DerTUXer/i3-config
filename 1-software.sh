@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Installing nala
+# Installing nala, eine gute Alternative zu apt
 sudo apt install nala -y
 sudo nala update
 
@@ -11,9 +11,9 @@ sudo nala install -y python3-pip
 sudo nala install -y npm zig
 sudo nala install -y default-jdk
 
-# CPU Microcode Updates (if you have amd cpu uncomment the first one and comment the second one)
-#sudo nala install -y amd64-microcode
-sudo nala install -y intel-microcode
+# CPU Microcode Updates ()
+#sudo nala install -y amd64-microcode  # Für AMD-Prozessor
+sudo nala install -y intel-microcode    # Für Intel-Prozessor (...I3, I5, I7...)
 
 # Systemtools
 sudo nala install -y network-manager-gnome
@@ -24,9 +24,10 @@ sudo systemctl enable acpid
 sudo nala install -y alacritty
 
 # Modern replacement for ls
-# sudo nala install -y exa
-sudo nala install -y eza
+# sudo nala install -y exa   # Veraltetes Pakte, könnte unter Debian noch finktionieren
+sudo nala install -y eza     # Aktuelles Paket (ab Ubuntu 25.10)
 
+# Dateibrowser installieren
 sudo nala install -y ranger nemo
 
 # XFCE Settings
@@ -37,7 +38,6 @@ sudo nala install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
 
 # System Information and Monitoring
 sudo nala install -y htop btop
-
 sudo nala install -y neowofetch
 
 # Screenshots
@@ -51,7 +51,7 @@ sudo systemctl enable cups
 sudo nala install -y bluez blueman
 sudo systemctl enable bluetooth
 
-# Menu and Window Managers
+# Menu und Window Managers
 sudo nala install -y sxhkd numlockx rofi dunst libnotify-bin picom dmenu polybar dbus-x11
 
 # Archive Management
@@ -64,7 +64,7 @@ sudo nala install -y pluma pluma-plugins pluma-plugins-common pluma-plugin-smart
 
 # Image Viewer
 sudo nala install -y viewnior feh sxiv ueberzug python3-pillow
-#pip install pillow (for debian 11)
+#pip install pillow (bei debian 11)
 
 # Media Player
 sudo nala install -y mpv mpc ncmpcpp mpd vlc audacious audacity
@@ -73,13 +73,13 @@ sudo nala install -y guvcview
 # Document Viewer
 sudo nala install -y zathura qiv
 
-# Disk Utilities and Cleaning Tools
+# Disk Utilities und Cleaning Tools
 sudo nala install -y gnome-disk-utility bleachbit
 
 # Neovim Build prerequisites
 sudo nala install -y ninja-build gettext cmake curl python3-venv
 
-# Required packages for i3-gaps installation
+# Pakete für i3 inkl. i3-gaps
 sudo nala install -y meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev 
 sudo nala install -y libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev 
 sudo nala install -y libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 
@@ -107,4 +107,5 @@ sudo nala install -y pavucontrol figlet
 sudo nala install -y flatpak inxi libcanberra-gtk3-module ssh  
 sudo nala install -y sysvbanneqiv lfm mc locate ncalsudo-rs flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+# Wenn das Terminalfenster alacritty nicht korrekt angezeigt wird
 alacritty migrate
