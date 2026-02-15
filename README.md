@@ -8,7 +8,7 @@ vorkonfiguriete i3 tiling Installationshilfe, welche auf Bash-Skripte aufbaut.
 
 
 
-__WICHTIG!__
+__WICHTIG!!__
 
 Es muss eine zuvor Ubuntu Desktop Umgebung installiert wwerden.
 
