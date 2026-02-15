@@ -41,10 +41,9 @@ font pango:monospace 12
 new_window 1pixel
 gaps inner $g_inner
 gaps outer $g_outer
-default_border pixel 2
+default_border pixel 7
 default_floating_border pixel 2
 floating_modifier $mod
-
 
 ################################################################
 ##               MOD Keyindings  by TUXer's                   ##
@@ -57,7 +56,7 @@ floating_modifier $mod
  bindsym $mod+e exec evolution
 #bindsym $mod+f fullscreen
  bindsym $mod+g exec i3-sensible-terminal -e pkexec gparted & exit
-#Steambindsym $mod+g gparted
+#bindsym $mod+g gparted
 #bindsym $mod+h splitt h
  bindsym $mod+i exec alacritty -e "htop"
  bindsym $mod+j exec i3-sensible-terminal -e btop
@@ -73,13 +72,13 @@ floating_modifier $mod
  bindsym $mod+t exec alacritty --hold -e neowofetch
  bindsym $mod+u exec gimp
 #bindsym $mod+v split v
- bindsym $mod+w exec google-chrome-stable
+ bindsym $mod+w exec brave-browser
  bindsym $mod+x	exec rhythmbox
  bindsym $mod+y exec remmina
  bindsym $mod+z	exec qmapshack
 
 #################################################################
-##            MOD + SHIFT   Keybinding   by Der TUXer          ##
+##            SUPER + SHIFT   Keybinding   by Der TUXer        ##
 #################################################################
   bindsym $mod+Shift+Return exec alacritty --class AlacrittyFloating
 # bindsym $mod+Shift+a 
@@ -87,7 +86,7 @@ floating_modifier $mod
 # bindsym $mod+Shift+c  
 # bindsym $mod+Shift+d  
 # bindsym $mod+Shift+e
-# bindsym $mod+Shift+f 
+  bindsym $mod+Shift+f floating toggle; [floating] resize set 1000 700; move position center
 # bindsym $mod+Shift+g  
 # bindsym $mod+Shift+h 
 # bindsym $mod+Shift+i  
@@ -98,7 +97,7 @@ floating_modifier $mod
   bindsym $mod+Shift+n pkexec systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
   bindsym $mod+Shift+o exec i3lock-fancy
 # bindsym $mod+Shift+o exec i3lock -i ~/.config/wallpapers/cinnamon_background_Tux.png
-  bindsym $mod+Shift+q exec pkill -u tuxer
+  bindsym $mod+Shift+q exec pkill -u $USER
 # bindsym $mod+Shift+r #refresh
 # bindsym $mod+Shift+s
 # bindsym $mod+Shift+t
@@ -111,14 +110,14 @@ floating_modifier $mod
 ###############################################################
 ##               alt Keybinding   by Der TUXer               ##
 ###############################################################
-# bindsym $alt+a 
+  bindsym $alt+a exec alacritty -e ncmpcpp
   bindsym $alt+b exec ~/.config/scripts/bookmarks.sh
   bindsym $alt+c exec ~/.config/scripts/conf.sh
 # bindsym $alt+d 
   bindsym $alt+Shift+e layout toggle split  
   bindsym $alt+e exec pluma
-# bindsym $alt+f
-# bindsym $alt+g 
+  bindsym $alt+f exec freecad
+# bindsym $alt+g exec 
 # bindsym $alt+h 
 # bindsym $alt+i 
 # bindsym $alt+j 
@@ -143,4 +142,7 @@ floating_modifier $mod
   bindsym $alt+Shift+y pkexec /home/zed/.config/scripts/yt_blocker.sh
 # bindsym $alt+z 
 # bindsym $alt+b 
+
+### Einstellungen für HDMI Monitor beim Laptop
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
 
