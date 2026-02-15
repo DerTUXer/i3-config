@@ -1,6 +1,7 @@
 #!/bin/bash
-
-# Rice
+################################################
+# Einrichten von Themen, Icons, Wallpapers usw.
+################################################
 cd
 mkdir ~/.themes
 mkdir ~/.icons
