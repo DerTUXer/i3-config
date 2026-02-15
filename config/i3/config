@@ -35,7 +35,7 @@ smart_borders on
   for_window [urgent=latest] focus
 
 ######################################
-#             Theme                  #
+#             Gaps                  #
 ######################################
 font pango:monospace 12
 new_window 1pixel
