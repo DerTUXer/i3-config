@@ -151,7 +151,7 @@ ncal
 
 # TUXer`s Hotkeys
 echo -e "\033[1;34m  ----------------------ALIAS------------------------\e[0m "
-echo -en "\033[1;34m  |\e[0m " && 	echo -en "\033[1;33m  rechner .......... \e[0m "	&& echo "Syteminformationen"
+echo -en "\033[1;34m  |\e[0m " && 	echo -en "\033[1;33m  rechner .......... \e[0m "	&& echo "Systeminformationen"
 echo -en "\033[1;34m  |\e[0m " && 	echo -en "\033[1;33m  up ............... \e[0m "	&& echo "komplettes Update !"
 echo -en "\033[1;34m  |\e[0m " && 	echo -en "\033[1;33m  c64 .............. \e[0m "	&& echo "Basic V2.0"
 echo -en "\033[1;34m  |\e[0m " && 	echo -en "\033[1;33m  sauber ........... \e[0m "	&& echo "Paket aufräumen"
