@@ -17,7 +17,7 @@ sudo nala install -y intel-microcode    # Für Intel-Prozessor (...I3, I5, I7...
 
 # Systemtools
 sudo nala install -y network-manager-gnome
-sudo nala install -y lxappearance qt5ct arandr xclip
+sudo nala install -y lxappearance qt5ct arandr parcellite
 sudo nala install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
