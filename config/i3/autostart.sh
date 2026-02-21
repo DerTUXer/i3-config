@@ -13,24 +13,26 @@
 ######################
 ## Polybar einrichten
 ######################
-picom -b &
-dunst &
-killall nm-applet
-nm-applet &
+picom -b &                            # Grafikdarstellung und optische Effekte 
+dunst &                               # Benachrichtigungen
+killall nm-applet             
+nm-applet &                           # Netzwerk-Gui für die Taskleiste
 #killall blueman-applet
-#blueman-applet &
+#blueman-applet &                     # Bluetooth-Verwaltung für die Taskleiste
 
 killall volumeicon
 volumeicon &
 numlockx on &
 
 killall xfce4-power-manager 
-xfce4-power-manager &
+xfce4-power-manager &                  # Energieverwaltung für die Taskleiste
 
 killall sxhkd
-sxhkd -c ~/.config/sxhkd/sxhkdrc &
+sxhkd -c ~/.config/sxhkd/sxhkdrc &     # Weitere Einstellungen für i3
 
 ibus-daemon -drx &
+parcellite                             # Zwischenablage für die Taskleiste
+
 
 #################################################
 # Element (Matrix) im Hintergrund starten
