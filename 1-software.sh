@@ -24,7 +24,7 @@ sudo nala install -y lxappearance qt5ct arandr parcellite xclip
 sudo nala install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
-sudo nala install -y alacritty
+sudo nala install -y alacritty kitty
 
 # Modern replacement for ls
 # sudo nala install -y exa   # Veraltetes Pakte, könnte unter Debian noch finktionieren
