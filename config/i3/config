@@ -15,8 +15,8 @@ set $g_inner 9
 set $g_outer 4
 smart_borders on
 
-# Set AlacrittyFloating window to floating mode
-  for_window [class="AlacrittyFloating"] floating enable, move position center
+# Set kittyFloating window to floating mode
+  for_window [class="kittyFloating"] floating enable, move position center
 # Open sxiv in fullscreen mode
   for_window [class="Sxiv"] fullscreen
 
@@ -48,7 +48,7 @@ floating_modifier $mod
 ################################################################
 ##               MOD Keyindings  by TUXer's                   ##
 ################################################################
- bindsym $mod+Return exec alacritty
+ bindsym $mod+Return exec kitty
  bindsym $mod+a exec audacious
  bindsym $mod+b exec alacarte
  bindsym $mod+c exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=x64sc net.sf.VICE
@@ -58,7 +58,7 @@ floating_modifier $mod
  bindsym $mod+g exec i3-sensible-terminal -e pkexec gparted & exit
 #bindsym $mod+g gparted
 #bindsym $mod+h splitt h
- bindsym $mod+i exec alacritty -e "htop"
+ bindsym $mod+i exec kitty -e "htop"
  bindsym $mod+j exec i3-sensible-terminal -e btop
  bindsym $mod+k exec kdenlive 
  bindsym $mod+l exec libreoffice
@@ -67,7 +67,7 @@ floating_modifier $mod
  bindsym $mod+o exec obs
  bindsym $mod+p exec rofi -show drun -line padding 4 -hide-scrollbar -show-icons
  bindsym $mod+q kill
- bindsym $mod+r exec alacritty -e "ranger"
+ bindsym $mod+r exec kitty -e "ranger"
  bindsym $mod+s exec i3-sensible-terminal -e "sudo synaptic" &
  bindsym $mod+t exec alacritty --hold -e neowofetch
  bindsym $mod+u exec gimp
@@ -110,7 +110,7 @@ floating_modifier $mod
 ###############################################################
 ##               alt Keybinding   by Der TUXer               ##
 ###############################################################
-  bindsym $alt+a exec alacritty -e ncmpcpp
+  bindsym $alt+a exec kitty -e ncmpcpp
   bindsym $alt+b exec ~/.config/scripts/bookmarks.sh
   bindsym $alt+c exec ~/.config/scripts/conf.sh
 # bindsym $alt+d 
