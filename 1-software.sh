@@ -11,6 +11,9 @@ sudo nala install -y python3-pip
 sudo nala install -y npm zig
 sudo nala install -y default-jdk
 
+# Uhr im Terminal
+sudo nala install -y tty-clock 
+
 # CPU Microcode Updates ()
 #sudo nala install -y amd64-microcode  # Für AMD-Prozessor
 sudo nala install -y intel-microcode    # Für Intel-Prozessor (...I3, I5, I7...)
