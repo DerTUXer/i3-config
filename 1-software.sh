@@ -111,4 +111,4 @@ sudo nala install -y flatpak inxi libcanberra-gtk3-module ssh
 sudo nala install -y sysvbanneqiv lfm mc locate ncalsudo-rs flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Wenn das Terminalfenster alacritty nicht korrekt angezeigt wird
-alacritty migrate
+# alacritty migrate
