@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Installing nala, eine gute Alternative zu apt
+# Installing nala - eine gute Alternative zu apt
 sudo apt install nala -y
 sudo nala update
 
