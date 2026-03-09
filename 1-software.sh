@@ -26,6 +26,9 @@ sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 sudo nala install -y alacritty kitty
 
+# optional Kitty Erweiterung 
+# sudo nala install -y kitty-terminfo
+
 # Modern replacement for ls
 # sudo nala install -y exa   # Veraltetes Pakte, könnte unter Debian noch finktionieren
 sudo nala install -y eza     # Aktuelles Paket (ab Ubuntu 25.10)
